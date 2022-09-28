@@ -1,0 +1,15 @@
+Author: Diane Trout <diane@ghic.org>
+Description: Upstream unconditionally includes _static/js/custom.js
+ even though the packages that use this theme don't use it.
+
+--- a/dask_sphinx_theme/layout.html
++++ b/dask_sphinx_theme/layout.html
+@@ -3,8 +3,6 @@
+ {% set css_files = css_files + ["_static/css/explore.css"] %}
+ {% set css_files = css_files + ["_static/css/nbsphinx.css"] %}
+ 
+-{% set script_files = script_files + ["_static/js/custom.js"] %}
+-
+ {% block extrahead %}
+   <link rel="shortcut icon" href="{{ pathto('_static/images/favicon.ico', 1) }}"/>
+   {# SOCIAL GRAPH #}

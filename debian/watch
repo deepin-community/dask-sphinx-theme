@@ -1,0 +1,4 @@
+# please also check https://pypi.debian.net/dask_sphinx_theme/watch
+version=3
+opts=uversionmangle=s/(rc|a|b|c)/~$1/ \
+https://pypi.debian.net/dask-sphinx-theme/dask_sphinx_theme-(.+)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))
