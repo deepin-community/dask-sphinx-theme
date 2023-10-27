@@ -1,1 +1,3 @@
-skip-custom-js.patch
+disable-google-tag-manager.patch
+disable-remote-font.patch
+support-file-url.patch

@@ -1,0 +1,24 @@
+Author: Diane Trout <diane@ghic.org>
+Subject: In trying to make the dask documentation installable locally and
+ not depend on remote resources I tried linking to yaml schema files with
+ file urls. requests stopped processing those so I needed to manually
+ handle the file:/// case.
+Forwarded: no
+--- a/dask_sphinx_theme/ext/dask_config_sphinx_ext.py
++++ b/dask_sphinx_theme/ext/dask_config_sphinx_ext.py
+@@ -5,8 +5,13 @@
+ 
+ 
+ def get_remote_yaml(url):
+-    r = requests.get(url)
+-    return yaml.safe_load(r.text)
++    if url.startswith("file:///"):
++        with open(url[len("file:///"):], "rt") as instream:
++            text = instream.read()
++    else:
++        r = requests.get(url)
++        text = r.text
++    return yaml.safe_load(text)
+ 
+ 
+ class DaskConfigDirective(Directive):
