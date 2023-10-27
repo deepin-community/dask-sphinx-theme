@@ -7,8 +7,10 @@ Build-Depends: debhelper-compat (= 13),
                node-html5shiv,
                python3-all,
                python3-setuptools,
-               python3-sphinx-rtd-theme
-Standards-Version: 4.6.0
+               python3-sphinx-rtd-theme,
+               fonts-inter,
+               fonts-inconsolata,
+Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/python-team/packages/dask-sphinx-theme
 Vcs-Git: https://salsa.debian.org/python-team/packages/dask-sphinx-theme.git
 Homepage: https://github.com/dask/dask-sphinx-theme/

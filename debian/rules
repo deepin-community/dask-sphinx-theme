@@ -9,3 +9,7 @@ export PYBUILD_NAME=dask-sphinx-theme
 override_dh_fixperms:
 	dh_fixperms
 	chmod a-x debian/python3-dask-sphinx-theme/usr/lib/python3/dist-packages/dask_sphinx_theme/static/images/favicon.ico
+
+override_dh_auto_install:
+	mkdir -p debian/python3-dask-sphinx-theme/usr/lib/python3/dist-packages/dask_sphinx_theme/static/fonts
+	dh_auto_install
