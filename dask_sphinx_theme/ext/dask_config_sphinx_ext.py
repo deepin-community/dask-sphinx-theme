@@ -5,13 +5,8 @@ from docutils.parsers.rst import Directive, directives
 
 
 def get_remote_yaml(url):
-    if url.startswith("file:///"):
-        with open(url[len("file:///"):], "rt") as instream:
-            text = instream.read()
-    else:
-        r = requests.get(url)
-        text = r.text
-    return yaml.safe_load(text)
+    r = requests.get(url)
+    return yaml.safe_load(r.text)
 
 
 class DaskConfigDirective(Directive):
